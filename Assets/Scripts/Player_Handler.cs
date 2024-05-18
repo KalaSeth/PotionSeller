@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Player_Handler : MonoBehaviour
 {
+    public static Player_Handler instace;
+
+    public int PlayerState; // 0 = ShopCounter, 1 = Kitchen, 2 = Serve, 3 = BjMode
+
+    public GameObject PlayerCam;
+
+    private void Awake()
+    {
+        instace = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +26,11 @@ public class Player_Handler : MonoBehaviour
     {
         
     }
+
+    void PlayerCamState(int state)
+    {
+
+    }
+
+    
 }

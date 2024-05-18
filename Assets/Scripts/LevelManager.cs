@@ -16,6 +16,16 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
     public void DiscordFeedback()
     {
         Application.OpenURL("https://discord.gg/juYfSyGpZ8");
