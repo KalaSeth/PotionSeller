@@ -152,6 +152,6 @@ public class PotionComponent : MonoBehaviour
         }
         #endregion
 
-        Debug.Log(CreatedPotionID);
+        //Debug.Log(CreatedPotionID);
     }
 }

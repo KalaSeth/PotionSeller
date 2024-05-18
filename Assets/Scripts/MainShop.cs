@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -57,19 +58,19 @@ public class MainShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
 
     public void OncClickCreatePotion()
     {
         potionSelfTransformIndex = PotionCount;
 
-        if (PotionCount < 9)
+        if (PotionCount < 10)
         {
             GameObject newPotion = Instantiate(PotionPrefab, PotionSelfTransform[potionSelfTransformIndex].localPosition, PotionSelfTransform[potionSelfTransformIndex].localRotation, PotionParent).gameObject;
 
             PotionSelf[potionSelfTransformIndex] = newPotion;
-
+            newPotion.name = "Popo" + PotionCount.ToString();
             newPotion.GetComponent<PotionComponent>().CreatePotion();
 
             PotionCount++;
@@ -83,40 +84,49 @@ public class MainShop : MonoBehaviour
 
     public void DeletePotion(int potionID)
     {
-        GameObject gameObject = PotionSelf[potionID];
-        PotionSelf[potionID] = null;
-        Destroy(gameObject);
-        PotionCount--;
+        if (PotionCount > 0)
+        {
+            GameObject gameObject = PotionSelf[potionID];
+            PotionSelf[potionID] = null;
+            Destroy(gameObject);
+            PotionCount--;
 
-        PotionSortCount = 0;
-        // SortPotionSelf();
-        PotionSelf = null;
-        CleartempSelf();
+            tempPotionSelf = RemoveElementAndSort(PotionSelf, PotionSelf[potionID]);
+
+            PotionSelf = tempPotionSelf;
+
+            PotionSelfRelocate();
+        }
     }
 
-    void SortPotionSelf()
+    void PotionSelfRelocate()
     {
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < PotionCount; i++)
         {
-            if (PotionSelf[i] != null)
+            PotionSelf[i].transform.position = PotionSelfTransform[i].localPosition;
+        }
+    }
+
+    public static GameObject[] RemoveElementAndSort(GameObject[] array, GameObject elementToRemove)
+    {
+        GameObject[] filteredArray = array.Where(go => go != null && go != elementToRemove).ToArray();
+
+        GameObject[] sortedArray = filteredArray.OrderBy(go => go.name).ToArray();
+
+        GameObject[] finalArray = new GameObject[10];
+        for (int i = 0; i < 10; i++)
+        {
+            if (i < sortedArray.Length)
             {
-                tempPotionSelf[PotionSortCount] = PotionSelf[i];
-                PotionSortCount++;
+                finalArray[i] = sortedArray[i];
+            }
+            else
+            {
+                finalArray[i] = null;
             }
         }
 
-        PotionSelf = tempPotionSelf;
-    }
-
-    void CleartempSelf()
-    {
-        for (int j = 1; j < PotionParent.childCount; j++)
-        {
-            if (PotionParent.GetChild(j) != null)
-            {
-                PotionSelf[j] = PotionParent.GetChild(j).gameObject;
-            }
-        }
+        return finalArray;
     }
 
 }
