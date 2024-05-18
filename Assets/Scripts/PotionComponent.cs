@@ -8,6 +8,8 @@ public class PotionComponent : MonoBehaviour
     public string PotionName;
     public Text PotionNameText;
 
+    [SerializeField] private Canvas canvas;
+
     // if left 0 = no item, 
     public int[] Item;
     public int ItemIndex;
@@ -40,6 +42,7 @@ public class PotionComponent : MonoBehaviour
     
     public int CreatedPotionID; // 0 = nill
 
+
     public void CreatePotion()
     {
         for (ItemIndex = 0; ItemIndex < 7; ItemIndex++)
@@ -47,6 +50,9 @@ public class PotionComponent : MonoBehaviour
             Item[ItemIndex] = (int)MainShop.instance.ItemSlider[ItemIndex].value;
         }
         MixingPotion();
+        CanvasSetter();
+
+        PotionNameText.text = gameObject.name.ToString();
     }
 
     void MixingPotion()
@@ -154,4 +160,10 @@ public class PotionComponent : MonoBehaviour
 
         //Debug.Log(CreatedPotionID);
     }
+
+    void CanvasSetter()
+    {
+        canvas.worldCamera = Camera.main;
+    }
+
 }

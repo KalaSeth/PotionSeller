@@ -41,6 +41,7 @@ public class MainShop : MonoBehaviour
     int potionSelfTransformIndex;
     public GameObject[] PotionSelf;
     public GameObject[] tempPotionSelf;
+    public InputField PotionNameInputField;
 
 
 
@@ -70,7 +71,7 @@ public class MainShop : MonoBehaviour
             GameObject newPotion = Instantiate(PotionPrefab, PotionSelfTransform[potionSelfTransformIndex].localPosition, PotionSelfTransform[potionSelfTransformIndex].localRotation, PotionParent).gameObject;
 
             PotionSelf[potionSelfTransformIndex] = newPotion;
-            newPotion.name = "Popo" + PotionCount.ToString();
+            newPotion.name = PotionNameInputField.text;
             newPotion.GetComponent<PotionComponent>().CreatePotion();
 
             PotionCount++;
@@ -127,6 +128,17 @@ public class MainShop : MonoBehaviour
         }
 
         return finalArray;
+    }
+
+    public void TreatPotion()
+    {
+        if (Player_Handler.instace.PotionInHand == true)
+        {
+            Debug.Log("Potion ID " + Player_Handler.instace.PotionId + " given.");
+            Player_Handler.instace.PotionInHand = false;
+            Player_Handler.instace.PotionId = 0;
+        }else { Debug.Log("Nothing in Hand"); }
+        
     }
 
 }
