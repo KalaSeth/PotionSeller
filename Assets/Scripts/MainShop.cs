@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +22,9 @@ public class MainShop : MonoBehaviour
     public int Rating;
 
     // NPC
+    public float SpawnDelayTimer;
+    public bool NPConCounter;
+    public GameObject CurrentNPC;
     public GameObject NPC_Prefab;
     public GameObject NPCMouth_Prefab;
     public GameObject NPCSpawner;
@@ -59,8 +61,30 @@ public class MainShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (DaynightTimer >= 0)
+        {
+           
+            if (NPConCounter == false)
+            {
+                SpawnDelayTimer -= Time.deltaTime;
+                
+                if (SpawnDelayTimer <= 0)
+                {
+                    NPCChainer();
+                    SpawnDelayTimer = Random.Range(3, 7);
+                }
+            }
+        }
     }
+
+    public void NPCChainer()
+    {
+        GameObject gameObject = Instantiate(NPCMouth_Prefab, SpawnTarget.transform.position, SpawnTarget.transform.rotation, SpawnTarget.transform);
+        CurrentNPC = gameObject;
+        NPConCounter = true;
+
+    }
+
 
     public void OncClickCreatePotion()
     {
@@ -134,9 +158,16 @@ public class MainShop : MonoBehaviour
     {
         if (Player_Handler.instace.PotionInHand == true)
         {
-            Debug.Log("Potion ID " + Player_Handler.instace.PotionId + " given.");
-            Player_Handler.instace.PotionInHand = false;
-            Player_Handler.instace.PotionId = 0;
+            if (CurrentNPC.GetComponent<Kust_Marr>().BimariIndex == Player_Handler.instace.PotionId)
+            {
+                Debug.Log("Patient Treated with potion ID " + Player_Handler.instace.PotionId);
+                Player_Handler.instace.PotionInHand = false;
+                Player_Handler.instace.PotionId = 0;
+                Destroy(CurrentNPC);
+                NPConCounter = false;
+                DaynightTimer--;
+            }
+            
         }else { Debug.Log("Nothing in Hand"); }
         
     }
