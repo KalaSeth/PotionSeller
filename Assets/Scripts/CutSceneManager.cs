@@ -30,7 +30,7 @@ public class CutSceneManager : MonoBehaviour
     {
         IntroScene.SetActive(true);
                                         // Save the GameDone here using playerprefs;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     void ShowBadOutro()

@@ -32,6 +32,7 @@ public class MainShop : MonoBehaviour
     public GameObject CounterTarget;
 
     // NPC Mouth
+    public GameObject MouthPrefab;
 
     // Potion
     public int PotionCount;

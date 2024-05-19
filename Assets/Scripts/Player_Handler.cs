@@ -10,6 +10,7 @@ public class Player_Handler : MonoBehaviour
 
     public bool PotionInHand;
     public int PotionId;
+    bool Dropped;
 
     public GameObject PlayerHandMesh;
     public GameObject PotionViel;
@@ -64,7 +65,7 @@ public class Player_Handler : MonoBehaviour
         }
         else if (state == 4)
         {
-
+            
         }
     }
 
@@ -73,6 +74,13 @@ public class Player_Handler : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
 
         PlayerHandMesh.transform.position += Vector3.right * hor * HandMoveSpeed * Time.deltaTime;
+        if (Dropped == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // Drop PotionViel
+            }
+        }
     }
     
 }
