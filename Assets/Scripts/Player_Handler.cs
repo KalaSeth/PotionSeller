@@ -66,7 +66,6 @@ public class Player_Handler : MonoBehaviour
         {
 
         }
-
     }
 
     public void LandPotion()
