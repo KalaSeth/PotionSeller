@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void ContinueGame()

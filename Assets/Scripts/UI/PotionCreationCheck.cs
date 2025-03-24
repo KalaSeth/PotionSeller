@@ -24,7 +24,8 @@ public class PotionCreationCheck : MonoBehaviour
         {
             
             CreateButt.interactable = false;
-        }else if (Potionname.textComponent.text.Length > 2)
+        }
+        else if (Potionname.textComponent.text.Length > 2)
         {
             CreateButt.interactable = true;
         }

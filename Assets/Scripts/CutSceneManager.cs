@@ -37,13 +37,17 @@ public class CutSceneManager : MonoBehaviour
     {
         OutroSceneBad.SetActive(true);
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);
+        Invoke("Something", 8);
     }
 
+    public void Something()
+    {
+        SceneManager.LoadScene(0);
+    }
     void ShowGoodOutro()
     {
         OutroSceneGood.SetActive(true);
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene(0);
+        Invoke("Something", 3);
     }
 }

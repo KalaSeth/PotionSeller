@@ -51,7 +51,7 @@ public class ImgLooper : MonoBehaviour
         {
             Img = img2;
         }
-        Invoke("HideinTime", Random.Range(1.2f, 2.4f));
+        Invoke("HideinTime", Random.Range(1.2f, 1.8f));
     }
 
     public void ShowLoading()

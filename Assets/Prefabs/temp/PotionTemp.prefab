@@ -25,17 +25,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3126339755397592436}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1083387755612959255}
+  m_Father: {fileID: 3994179710822354471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000000059605, y: 2.237}
-  m_SizeDelta: {x: 660.7369, y: 165.1651}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.5299988, y: -4.91}
+  m_SizeDelta: {x: 653.16, y: 126.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &592707300172476480
 CanvasRenderer:
@@ -66,12 +66,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 19ecd568395677d498b8dd3cbfc47142, type: 3}
     m_FontSize: 121
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 121
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -106,17 +106,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5477182384899593015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0283}
+  m_LocalScale: {x: 0.0061594467, y: 0.0061594467, z: 0.0061594467}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1350887242621272739}
+  - {fileID: 3994179710822354471}
   m_Father: {fileID: 7045921554735235957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 10}
+  m_AnchoredPosition: {x: 0, y: -0.01458}
+  m_SizeDelta: {x: 12.85978, y: 14.17134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3308914949621604412
 Canvas:
@@ -181,6 +181,82 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &7785177210749818105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3994179710822354471}
+  - component: {fileID: 5231617880978925320}
+  - component: {fileID: 5951186570633065060}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3994179710822354471
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785177210749818105}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1350887242621272739}
+  m_Father: {fileID: 1083387755612959255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.75233805}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.15}
+  m_SizeDelta: {x: 73.87, y: 25.879}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5231617880978925320
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785177210749818105}
+  m_CullTransparentMesh: 1
+--- !u!114 &5951186570633065060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785177210749818105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6e38dbb662d4fa441a49c0a18e80830c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8292760319152461950
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,9 +286,9 @@ Transform:
   m_GameObject: {fileID: 8292760319152461950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.138}
-  m_LocalScale: {x: 0.098439, y: 0.098439, z: 0.098439}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1083387755612959255}
   m_Father: {fileID: 0}
@@ -224,7 +300,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8292760319152461950}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!23 &4429413657647742924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -286,8 +362,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.05
+  m_Height: 0.1
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &2740154382022427806
@@ -305,6 +381,21 @@ MonoBehaviour:
   PotionName: 
   PotionNameText: {fileID: 6511800284334905193}
   canvas: {fileID: 3308914949621604412}
+  PotionPrefabList:
+  - {fileID: 1984235185890381125, guid: e0d8cc0e152e34d4ba374f33e0f6e4a0, type: 3}
+  - {fileID: 9205399958558418507, guid: 574bf7ba9d4674a4da7be5376374d3cf, type: 3}
+  - {fileID: 8508030568835521172, guid: 6bc353a3774ff5941b9e2e14c7ce975f, type: 3}
+  - {fileID: 5360342728863202035, guid: 39a42bca1e7a222498d48efc070915d3, type: 3}
+  - {fileID: 1889782831479249120, guid: 74a0cc707c2ea9f4da83213ac18109ec, type: 3}
+  - {fileID: 2304609246719656734, guid: 2e3d749712f700845ac5b2c2ca07715c, type: 3}
+  - {fileID: 2978549172578710459, guid: b006abdbf4ef24544809c76a9b0fc6d1, type: 3}
+  - {fileID: 2618607057904687528, guid: 44cde59ee2dae584ebc350b315486c57, type: 3}
+  - {fileID: 7203072879962178829, guid: 3909a2750013c604397aca859c0efb8e, type: 3}
+  - {fileID: 7099432541578341678, guid: 366d0e0bb08ed8c4d9c2cd755c148c39, type: 3}
+  - {fileID: 7099432541578341678, guid: 00c716041f1740042b47370828bfdf87, type: 3}
+  - {fileID: 2978549172578710459, guid: f636a5eaf2d2ed042bc5d8a7a2587d14, type: 3}
+  - {fileID: 8508030568835521172, guid: 2584408c02e6b3b4884ae5206e058e22, type: 3}
+  PotionListIndex: 0
   Item: 00000000000000000000000000000000000000000000000000000000
   ItemIndex: 0
   CreatedPotionID: 0
